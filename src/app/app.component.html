@@ -1,0 +1,31 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-danger">
+    <a class="navbar-brand" href="#">{{title}}</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+
+
+           <li class="nav-item">
+            <a class="btn col-sm-1 col-md-1 col-lg-1 col-xl-1 m-1">
+              <img src="https://image.flaticon.com/icons/png/512/83/83519.png" width="80px" height="80px">
+            </a>
+
+            <li class="nav-item">
+                <a routerLinkActive="active" class="nav-link" routerLink=""  class="badge badge-danger">Inicio</a>
+            </li>
+            <li class="nav-item">
+                <a routerLinkActive="active" class="nav-link" routerLink="persons"  class="badge badge-danger">Personas</a>
+            </li>
+            <li class="nav-item">
+                <a routerLinkActive="active" class="nav-link" routerLink="movies"  class="badge badge-danger">Peliculas</a>
+            </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+    </div>
+</nav>
+<router-outlet></router-outlet>

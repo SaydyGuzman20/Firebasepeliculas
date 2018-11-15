@@ -1,0 +1,39 @@
+<br><br>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <h2>Lista De Personas</h2><br>
+            <ul class="list-group">
+                <ng-container *ngFor="let person of persons | async">
+                    <li class="list-group-item">
+                        <a routerLink="/detalle/{{person.id}}" [queryParams]="{action:'edit',reference:'google'}">
+                            {{person.nombre}} {{person.apellido}}
+                        </a><br> {{person.correo}}
+                    </li>
+                </ng-container>
+            </ul>
+        </div>
+        <div class="col-md-6">
+            <h2>Crear Persona</h2><br>
+            <div class="form-group">
+                <label>Nombre</label>
+                <input type="text" class="form-control" placeholder="Ingresar el nombre" [(ngModel)]="person.nombre">
+            </div>
+            <div class="form-group">
+                <label>Apellido</label>
+                <input type="text" class="form-control" placeholder="Ingresar el apellido" [(ngModel)]="person.apellido">
+            </div>
+            <div class="form-group">
+                <label>Correo</label>
+                <input type="email" class="form-control" placeholder="Ingresar el correo" [(ngModel)]="person.correo">
+            </div>
+            <div class="form-group">
+                <label>Descripción</label>
+                <textarea class="form-control" rows="5" [(ngModel)]="person.descripcion"></textarea>
+            </div>
+            <hr>
+            <button type="button" class="btn btn-primary" (click)="createPerson()">Crear persona</button>&nbsp;
+            <button type="button" class="btn btn-secondary" (click)="cancelPerson()">Cancelar</button>
+        </div>
+    </div>
+</div>
